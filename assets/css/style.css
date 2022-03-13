@@ -15,12 +15,22 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: sticky;
+    position: -webkit-sticky;
+    top:0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);
+
 }
 header a {
     color: #fce138;
@@ -42,17 +52,22 @@ header nav ul {
     list-style: none;
 }
 header nav ul li a {
-    margin: 10px 15px;
+    padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
-}
-header h1 {
-    font-weight: bold;
-    font-size: 36px;
-    color: #fce138;
-    margin: 0;
-    
-}
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+  }
+
+/*HEADER/NAVBAR STYLES END*/
+
+/*FOOTER STYLES START*/
 footer {
     background: #fce138;
     width: 100%;
@@ -79,6 +94,7 @@ footer a {
 section {
 padding: 60px;
 }
+/*END FOOTER STYLES*/
 
 /*Hero Style Start*/
 .hero {
@@ -89,6 +105,8 @@ padding: 60px;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 .hero-cta {
     width: 35%;
@@ -103,19 +121,24 @@ padding: 60px;
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0,0,0,5);
 
 }
     
 .hero-form {
         
     border: 3px solid #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    border-radius: 15px;
 }
-
+.hero-form button hover {
+    background-color: #39a6b2
+}
 .hero-form h3 {
     font-size: 24px;
     margin: 0
@@ -125,6 +148,7 @@ padding: 60px;
 }
 
 .form-input {
+    
     border: 1px solid #024e76;
     display: block;
     padding: 7px 15px;
@@ -132,7 +156,16 @@ padding: 60px;
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0,75);
 }
+
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+}
+
+
 .hero-form label {
     margin: 0 5px;
 }
@@ -142,9 +175,9 @@ padding: 60px;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-}
-           
-        
+    border-radius: 10px;
+            
+}        
 /*Hero Style End*/
 
 /*What we do*/
@@ -216,11 +249,16 @@ padding: 60px;
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex; 
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+.step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
+}
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .step-img {
@@ -322,6 +360,12 @@ padding: 60px;
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+    background-color: rgba(255,255,255,1);
+    outline: none;
 }
 
 .contact-form button {
@@ -332,6 +376,7 @@ padding: 60px;
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
 }
 /* REACH OUT STYLES END */
 
@@ -340,10 +385,12 @@ padding: 60px;
     header {
         padding-bottom: 0;
         justify-content: center;
+        position: relative;
     }
     header h1 {
         width: 100%;
         text-align: center;
+       
     }
     header nav ul {
         margin-top: 20px;
@@ -351,6 +398,7 @@ padding: 60px;
         justify-content: center;
     }
     header nav ul li a {
+       
         font-size: 20px;
     }
     footer h2, footer div {
@@ -401,24 +449,31 @@ padding: 60px;
 /*MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
     .hero-form button {
-        width: 100%;
+      width: 100%;
     }
-   .section-title {
-       width: 95%;
+  
+    .section-title {
+      width: 95%;
     }
+  
     .intro p {
-        width: 100%
+      width: 100%;
     }
+  
     .trainer {
-        flex: 0 100%
+      flex: 0 100%;
     }
+  
     .contact-info {
-        text-align: center;
+      text-align: center;
     }
+  
     .contact-info > * {
-        flex: 0 100%;
+      flex: 0 100%;
     }
-}
+  
     .contact-form {
-        order: 3;
+      order: 3;
     }
+  }
+}
